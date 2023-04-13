@@ -10,6 +10,8 @@ HEERE IS AN EXAMPLE
 
 
 Heres an example of inserting a row into a "users" table with three columns: "id", "name", and "email":
+              
+              NOTE ----> ALL STRINGS MUST BE IN SINGLE QUOTES,ALWAYS
 
 INSERT INTO users (id, name, email)
 VALUES (1, 'John Doe', 'johndoe@example.com');
