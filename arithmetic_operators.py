@@ -25,6 +25,14 @@ Exponentiation: ^ or **
   
   SELECT 2 ^ 3;    -- result: 8
   SELECT 2 ** 3;   -- result: 8
+    
+Square root: |/
+  
+  select |/25;    -- reult: 5
+    
+cube root : ||\
+  
+  select ||/27   -- result : 3
 
 
 These arithmetic operators can be used with numeric data types such as integer, bigint, decimal, numeric, float, real, etc. 
