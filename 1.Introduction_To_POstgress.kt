@@ -59,21 +59,78 @@ test=#                                                         // The name befor
  
 
 
+TO LSIT ALL DATABASES AVALIABLE IN POSTGRES
 *********************************************************************************************************************************************************
-TO LSIT ALL DATABASES AVALIABLE IN POSTgres
+
+RUn this command
+
+
+----------->  \L
+
+
+e.g test=# \l   --> In my database ,it lists the following list of databasese. Here , I have 4 databses with names empl_, tet,worker and the default database postgres
+
+                                             List of databases
+
+   Name    |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges
+-----------+----------+----------+----------------------------+----------------------------+-----------------------
+ empl_     | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ worker    | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ postgres  | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ test      | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+(4 rows)
 
 
 
 
 
+TO DELETE OR DROP A DATABASE
+*********************************************************************************************************************************************************
+
+run this command
+
+
+----------------> drop database  database_name:
+
+Here is an exmple
+e.g  postgres=# drop database test;
+DROP DATABASE                                         // This is a confirmation that the above operation was succesful.
 
 
 
 
 
+TO CREATE A TABLE IN A DATABSE
+*********************************************************************************************************************************************************
+
+------->   create table department(id int primary key not null, dept char(50) not null, emp_id int not null);
+
+This creates a table called department with three columns id, department, employee_id . These columns must have  a value and can not be null,
+The id is of integer data type and is the primary key
 
 
 
+
+TO LIST ALL THE TABLES AVAILABEL IN YOUR DATABASE
+run this command in your database
+
+-------------------> \d 
+
+
+for example in my databse ,it list the following
+
+
+test=# \d
+
+--> My databse has four tables , company ,department, genders and students
+           List of relations
+ Schema |    Name    | Type  |  Owner
+--------+------------+-------+----------
+ public | company    | table | postgres
+ public | department | table | postgres
+ public | genders    | table | postgres
+ public | students   | table | postgres
+(4 rows)
 
 
 
