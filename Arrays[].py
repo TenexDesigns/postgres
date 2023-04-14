@@ -244,6 +244,12 @@ SELECT * FROM table_name WHERE column_name ALL('{value1, value2, value3}');
 
 
 
+We can even do a search to find the row which has all its values qual to a given value.
+
+SELECT * FROM table_name WHERE 234444 = ALL[pay];
+
+
+
 
 This query searches for rows in table_name where the column_name array contains all of the values 'value1', 'value2', and 'value3'.
 
