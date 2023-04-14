@@ -196,25 +196,60 @@ These functions, along with other array functions, allow you to manipulate array
 
 
 
+SEARCHING ARRAYS
+***********************************************************************************************************
+
+
+In PostgreSQL, you can search for values within an array using the ANY and ALL operators along with the IN operator.
+
+
+
+
+Searching for a value using ANY:
+  
+The ANY operator checks whether any value in an array matches a specified value. For example:
+
+
+SELECT * FROM table_name WHERE 'search_value' = ANY(column_name);
+
+This query searches for rows in table_name where the column_name array contains the value 'search_value'.
+
+Here is an example  SELECT * FROM workers WHERE 1000 = ANY{pay};
+
+
+
+
+Searching for multiple values using ANY:
+
+  
+  You can also search for multiple values using ANY and the IN operator. For example:
+
+    
+    SELECT * FROM table_name WHERE column_name ANY('{value1, value2, value3}');
+
+This query searches for rows in table_name where the column_name array contains any of the values 'value1', 'value2', or 'value3'.
 
 
 
 
 
+Searching for all values using ALL:
+
+  
+  The ALL operator checks whether all values in an array match a specified value. For example:
+
+
+
+SELECT * FROM table_name WHERE column_name ALL('{value1, value2, value3}');
 
 
 
 
+This query searches for rows in table_name where the column_name array contains all of the values 'value1', 'value2', and 'value3'.
 
-
-
-
-
-
-
-
-
-
+Note that when searching for values in arrays, PostgreSQL uses a sequential scan of the array, which can be slower than searching for values in regular columns. 
+If you need to perform complex queries on arrays, you may want to consider using a different data model e.g json data type or using a specialized database such as
+a document-oriented database.
 
 
 
