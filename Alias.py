@@ -25,6 +25,12 @@ Using the same "employees" table, we can create an alias "wage" for the "salary"
 SELECT name, salary AS wage FROM employees;
 
 
+Column aliases can be used with ORDER BY and GROUP BY clauses, but not with WHERE or HAVING clauses.
+
+The AS keyword is optional, so you can also write it like this:
+
+SELECT column_name alias_name FROM table_name;
+
 
 
 
@@ -61,6 +67,12 @@ and then use an alias "revenue" to display the calculated value in the SELECT st
 
 
 
+Example with spaces in column alias:
+
+SELECT first_name || ' ' || last_name "full name" FROM customer;
+
+
+Column aliases can be used with ORDER BY and GROUP BY clauses, but not with WHERE or HAVING clauses.
 
 
 
